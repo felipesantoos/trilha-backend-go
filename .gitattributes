@@ -1,0 +1,3 @@
+# Sempre salvar com quebra de linha LF, mesmo editando no Windows.
+# Scripts .sh com CRLF quebram no Linux/WSL.
+* text=auto eol=lf

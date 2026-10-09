@@ -1,0 +1,15 @@
+# Binários gerados por go build
+*.exe
+*.out
+/bin/
+
+# Relatórios de cobertura de testes
+coverage.out
+coverage.html
+
+# Variáveis de ambiente locais (o .env.example vai para o repositório)
+.env
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
