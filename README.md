@@ -18,6 +18,7 @@ Cada vídeo tem o seu código aqui, para você rodar, comparar e consultar depoi
 | Código | Vídeo | Código do vídeo |
 |---|---|---|
 | M00 · V01 | Boas-vindas: o que é backend e o que vamos construir | [`m00/v01-boas-vindas`](m00/v01-boas-vindas) |
+| M00 · V02 | Como estudar nesta trilha | [`m00/v02-como-estudar`](m00/v02-como-estudar) |
 
 ## Glossário
 
