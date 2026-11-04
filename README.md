@@ -19,6 +19,7 @@ Cada vídeo tem o seu código aqui, para você rodar, comparar e consultar depoi
 |---|---|---|
 | M00 · V01 | Boas-vindas: o que é backend e o que vamos construir | [`m00/v01-boas-vindas`](m00/v01-boas-vindas) |
 | M00 · V02 | Como estudar nesta trilha | [`m00/v02-como-estudar`](m00/v02-como-estudar) |
+| M00 · V03 | Terminal essencial (Linux / WSL) | [`m00/v03-terminal-essencial`](m00/v03-terminal-essencial) |
 
 ## Glossário
 
