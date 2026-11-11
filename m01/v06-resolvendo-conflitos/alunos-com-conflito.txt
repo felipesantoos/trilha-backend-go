@@ -1,0 +1,8 @@
+Ana
+<<<<<<< HEAD
+Bruno Alves
+=======
+Bruno Lima
+>>>>>>> corrige-nome
+Carla
+Diego
