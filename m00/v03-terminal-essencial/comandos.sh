@@ -4,6 +4,9 @@
 # Os comandos do vídeo, na ordem. Não rode o arquivo inteiro de uma vez:
 # copie e cole um comando por vez no terminal e veja o que cada um faz.
 # As linhas com "erro" são de propósito, para você ver a mensagem.
+#
+# Atalhos: Tab completa nomes; seta para cima repete comandos; Ctrl+C interrompe
+# (no terminal ele não copia); para colar, Ctrl+Shift+V (Linux) ou Ctrl+V no Terminal do Windows.
 
 # --- Só no Windows: instalar o WSL (no PowerShell, como administrador) ---
 # wsl --install
@@ -46,4 +49,5 @@ which ls                # em qual pasta do PATH o ls está
 go version              # erro: Command 'go' not found (o Go entra no próximo vídeo)
 
 # --- Só no WSL: abrir a pasta atual no Explorador de Arquivos do Windows ---
+# Guarde os projetos no Ubuntu (~/trilha-backend), não em /mnt/c: lá fica bem mais lento.
 explorer.exe .
