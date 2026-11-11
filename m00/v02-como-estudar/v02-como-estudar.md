@@ -1,12 +1,12 @@
 # Modelo de pergunta
 
-Travou por mais de 30 minutos? Copie o modelo abaixo, preencha e mande a pergunta.
+Travou por mais de 30 minutos? Copie o modelo abaixo, preencha e mande a pergunta nos comentários do vídeo da aula. Se a aula ainda não tem vídeo, use qualquer vídeo da playlist e diga o código da aula (ex.: M00 · V03).
 
 Muitas vezes, só de preencher, você mesmo encontra a resposta.
 
 ```
 Onde estou: (vídeo e minuto, ex.: M00 · V04, minuto 3:20)
-Meu ambiente: (sistema e versão, ex.: Ubuntu no WSL, Go 1.23)
+Meu ambiente: (sistema e, se já instalou, a saída do go version; ex.: Ubuntu no WSL)
 
 O que eu estava tentando fazer:
 
@@ -43,7 +43,7 @@ O que eu fiz:
 go version
 
 O que aconteceu:
-go: command not found
+bash: go: command not found
 
 O que eu esperava que acontecesse:
 Ver a versão do Go instalada.
