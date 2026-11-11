@@ -1,0 +1,5 @@
+# Variáveis de ambiente locais
+.env
+
+# Executáveis gerados
+bin/
