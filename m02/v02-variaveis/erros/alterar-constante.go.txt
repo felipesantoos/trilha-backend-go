@@ -1,0 +1,10 @@
+package main
+
+import "fmt"
+
+const NotaMinima = 6.0
+
+func main() {
+	NotaMinima = 5.0
+	fmt.Println(NotaMinima)
+}

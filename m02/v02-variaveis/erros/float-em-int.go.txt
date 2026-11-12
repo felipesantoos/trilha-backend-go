@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	var nota float64 = 8.5
+	var arredondada int = nota
+	fmt.Println(arredondada)
+}

@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	nota := 8.5
+	nota := 9.0
+	fmt.Println(nota)
+}
