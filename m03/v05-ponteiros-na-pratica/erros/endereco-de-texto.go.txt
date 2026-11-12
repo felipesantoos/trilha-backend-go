@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome    string
+	Apelido *string
+}
+
+func main() {
+	bruno := Aluno{Nome: "Bruno Lima"}
+	bruno.Apelido = &"Bru"
+	fmt.Println(*bruno.Apelido)
+}

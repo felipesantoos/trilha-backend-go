@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+	Nota      float64
+}
+
+type Cadastro struct {
+	alunos  map[int]*Aluno
+	proxima int
+}
+
+func (c *Cadastro) Adicionar(nome string) *Aluno {
+	a := &Aluno{Nome: nome, Matricula: c.proxima}
+	c.alunos[a.Matricula] = a
+	c.proxima++
+	return a
+}
+
+func main() {
+	var c Cadastro
+	eva := c.Adicionar("Eva")
+	fmt.Println(eva.Matricula)
+}

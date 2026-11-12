@@ -1,0 +1,30 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+	Nota      float64
+}
+
+type Cadastro struct {
+	alunos  map[int]Aluno
+	proxima int
+}
+
+func (c *Cadastro) LancarNota(matricula int, nota float64) error {
+	if _, ok := c.alunos[matricula]; !ok {
+		return errors.New("matrícula não encontrada")
+	}
+	c.alunos[matricula].Nota = nota
+	return nil
+}
+
+func main() {
+	c := Cadastro{alunos: map[int]Aluno{1001: {"Ana", 1001, 0}}}
+	fmt.Println(c.LancarNota(1001, 9))
+}

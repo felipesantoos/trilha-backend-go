@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome string
+	Nota float64
+}
+
+func main() {
+	turma := []Aluno{{"Ana", 6}}
+	ana := &turma[0]
+
+	turma = append(turma, Aluno{"Bruno", 5})
+	ana.Nota = 10
+
+	fmt.Println("ana:", ana.Nota)
+	fmt.Println("turma:", turma)
+}

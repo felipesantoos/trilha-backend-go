@@ -1,0 +1,45 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+	Nota      float64
+}
+
+type Cadastro struct {
+	alunos  map[int]*Aluno
+	proxima int
+}
+
+func NovoCadastro() *Cadastro {
+	return &Cadastro{alunos: make(map[int]*Aluno), proxima: 1001}
+}
+
+func (c *Cadastro) Adicionar(nome string) *Aluno {
+	a := &Aluno{Nome: nome, Matricula: c.proxima}
+	c.alunos[a.Matricula] = a
+	c.proxima++
+	return a
+}
+
+func (c *Cadastro) Buscar(matricula int) (Aluno, bool) {
+	a, ok := c.alunos[matricula]
+	if !ok {
+		return Aluno{}, false
+	}
+	return *a, true
+}
+
+func main() {
+	c := NovoCadastro()
+	c.Adicionar("Ana Souza")
+
+	if a, ok := c.Buscar(1001); ok {
+		a.Nota = 9
+		fmt.Println("na busca:", a.Nota)
+	}
+	a, _ := c.Buscar(1001)
+	fmt.Println("no cadastro:", a.Nota)
+}
