@@ -1,0 +1,45 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Aluno struct {
+	Nome  string
+	Email string
+}
+
+type Cadastro interface {
+	Adicionar(a Aluno) error
+	Buscar(nome string) (Aluno, error)
+	Listar() []Aluno
+	Remover(nome string) error
+	Contar() int
+}
+
+type ListaDeAlunos struct {
+	alunos []Aluno
+}
+
+func (l ListaDeAlunos) Buscar(nome string) (Aluno, error) {
+	for _, a := range l.alunos {
+		if a.Nome == nome {
+			return a, nil
+		}
+	}
+	return Aluno{}, errors.New("aluno não encontrado: " + nome)
+}
+
+func emailDe(c Cadastro, nome string) string {
+	a, err := c.Buscar(nome)
+	if err != nil {
+		return ""
+	}
+	return a.Email
+}
+
+func main() {
+	lista := ListaDeAlunos{alunos: []Aluno{{Nome: "Ana", Email: "ana@exemplo.com"}}}
+	fmt.Println(emailDe(lista, "Ana"))
+}

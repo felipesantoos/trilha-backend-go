@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome  string
+	Email string
+}
+
+type Notificador interface {
+	Enviar(a Aluno, mensagem string) error
+}
+
+type NotificadorEmail struct {
+	Remetente string
+}
+
+func (e NotificadorEmail) Enviar(a Aluno, mensagem string) error {
+	fmt.Printf("[e-mail de %s para %s] %s\n", e.Remetente, a.Email, mensagem)
+	return nil
+}
+
+type NotificadorSMS struct{}
+
+func (s NotificadorSMS) Enviar(a Aluno, mensagem string) error {
+	fmt.Printf("[SMS para %s] %s\n", a.Nome, mensagem)
+	return nil
+}
+
+func main() {
+	var n Notificador = NotificadorEmail{Remetente: "secretaria@exemplo.com"}
+	sms := n.(NotificadorSMS)
+	fmt.Println(sms)
+}

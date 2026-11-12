@@ -1,0 +1,52 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome  string
+	Email string
+}
+
+type Notificador interface {
+	Enviar(a Aluno, mensagem string) error
+}
+
+type NotificadorEmail struct {
+	Remetente string
+}
+
+func (e NotificadorEmail) Enviar(a Aluno, mensagem string) error {
+	fmt.Printf("[e-mail de %s para %s] %s\n", e.Remetente, a.Email, mensagem)
+	return nil
+}
+
+type NotificadorSMS struct{}
+
+func (s NotificadorSMS) Enviar(a Aluno, mensagem string) error {
+	fmt.Printf("[SMS para %s] %s\n", a.Nome, mensagem)
+	return nil
+}
+
+type NotificadorMemoria struct {
+	Enviadas []string
+}
+
+func (m *NotificadorMemoria) Enviar(a Aluno, mensagem string) error {
+	m.Enviadas = append(m.Enviadas, a.Nome+": "+mensagem)
+	return nil
+}
+
+func descrever(n Notificador) string {
+	switch n.(type) {
+	case NotificadorEmail:
+		return "e-mail"
+	case NotificadorMemoria:
+		return "memória"
+	default:
+		return "canal desconhecido"
+	}
+}
+
+func main() {
+	fmt.Println(descrever(&NotificadorMemoria{}))
+}
