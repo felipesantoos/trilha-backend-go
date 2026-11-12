@@ -1,0 +1,10 @@
+package main
+
+type Turma struct {
+	Notas map[string]float64
+}
+
+func main() {
+	var t Turma
+	t.Notas["Ana"] = 8.5
+}

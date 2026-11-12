@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+}
+
+var alunos = []*Aluno{
+	{Nome: "Ana", Matricula: 1001},
+	{Nome: "Bruno", Matricula: 1002},
+}
+
+func buscar(matricula int) *Aluno {
+	for _, a := range alunos {
+		if a.Matricula == matricula {
+			return a
+		}
+	}
+	return nil
+}
+
+func saudacao(a *Aluno) string {
+	return "Olá, " + a.Nome
+}
+
+func main() {
+	fmt.Println(saudacao(buscar(1001)))
+	fmt.Println(saudacao(buscar(1003)))
+}

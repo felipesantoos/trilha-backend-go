@@ -1,0 +1,28 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+}
+
+var ErrNaoEncontrado = errors.New("aluno não encontrado")
+
+func buscar(matricula int) (*Aluno, error) {
+	if matricula == 1001 {
+		return &Aluno{Nome: "Ana", Matricula: 1001}, nil
+	}
+	return nil, ErrNaoEncontrado
+}
+
+func main() {
+	a, err := buscar(1003)
+	if err != nil {
+		fmt.Println("Erro:", err)
+	}
+	fmt.Println(a.Nome)
+}

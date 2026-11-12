@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome string
+	Nota float64
+}
+
+func main() {
+	alunos := map[int]*Aluno{
+		1001: {Nome: "Ana"},
+	}
+
+	fmt.Println(alunos[9999])
+	alunos[9999].Nota = 7
+}

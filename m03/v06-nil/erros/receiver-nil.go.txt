@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+type Aluno struct{ Nome string }
+
+func (a *Aluno) NomeOuPadrao() string {
+	return a.Nome
+}
+
+func main() {
+	var a *Aluno
+	fmt.Println(a.NomeOuPadrao())
+}
