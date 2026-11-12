@@ -1,0 +1,26 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Turma struct {
+	Codigo string
+	Vagas  int
+	Alunos []string
+}
+
+func (t *Turma) Matricular(nome string) error {
+	if t.Vagas == 0 {
+		return errors.New("turma cheia")
+	}
+	t.Vagas--
+	t.Alunos = append(t.Alunos, nome)
+	return nil
+}
+
+func main() {
+	Turma{Vagas: 2}.Matricular("Ana")
+	fmt.Println("matriculada")
+}

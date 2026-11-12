@@ -1,0 +1,29 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+type Turma struct {
+	Codigo string
+	Vagas  int
+	Alunos []string
+}
+
+func (t *Turma) Matricular(nome string) error {
+	if t.Vagas == 0 {
+		return errors.New("turma cheia")
+	}
+	t.Vagas--
+	t.Alunos = append(t.Alunos, nome)
+	return nil
+}
+
+func main() {
+	turmas := []Turma{{Codigo: "GO-01", Vagas: 2}, {Codigo: "GO-02", Vagas: 2}}
+	for _, t := range turmas {
+		t.Matricular("Ana")
+	}
+	fmt.Println(turmas[0].Alunos, turmas[1].Alunos)
+}

@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome string
+	Nota float64
+}
+
+func lancarNota(a *Aluno, nota float64) {
+	a.Nota = nota
+}
+
+func main() {
+	ana := Aluno{Nome: "Ana"}
+	lancarNota(ana, 9)
+	fmt.Println("no main:", ana.Nota)
+}

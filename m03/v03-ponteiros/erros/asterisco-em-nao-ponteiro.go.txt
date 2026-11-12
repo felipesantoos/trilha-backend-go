@@ -1,0 +1,8 @@
+package main
+
+import "fmt"
+
+func main() {
+	vagas := 20
+	fmt.Println(*vagas)
+}

@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+type Turma struct {
+	Codigo string
+	Vagas  int
+	Alunos []string
+}
+
+func (t Turma) Matricular(nome string) {
+	t.Vagas--
+	fmt.Println("dentro do método, vagas:", t.Vagas)
+}
+
+func main() {
+	t := Turma{Codigo: "GO-01", Vagas: 2}
+	t.Matricular("Ana")
+	fmt.Println("no main, vagas:", t.Vagas)
+}
