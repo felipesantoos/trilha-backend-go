@@ -1,0 +1,8 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.println("Bem-vindo à Trilha Backend em Go!")
+	fmt.Println("Aula:", "M02 · V01")
+}
