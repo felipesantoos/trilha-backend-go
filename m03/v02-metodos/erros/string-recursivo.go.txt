@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+type Curso struct {
+	Nome string
+}
+
+func (c Curso) String() string {
+	return fmt.Sprintf("Curso %v", c)
+}
+
+func main() {
+	fmt.Println(Curso{Nome: "Backend em Go"})
+}

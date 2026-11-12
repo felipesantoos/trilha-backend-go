@@ -1,0 +1,11 @@
+package main
+
+import "fmt"
+
+func (s string) Gritar() string {
+	return s + "!"
+}
+
+func main() {
+	fmt.Println("oi")
+}

@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome  string
+	Notas []float64
+}
+
+func (a Aluno) Media() float64 {
+	return 0
+}
+
+func main() {
+	ana := Aluno{Nome: "Ana"}
+	fmt.Println(ana.media())
+}

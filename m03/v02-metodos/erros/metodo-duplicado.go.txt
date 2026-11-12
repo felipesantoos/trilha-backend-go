@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome string
+}
+
+func (a Aluno) Media() float64 {
+	return 0
+}
+
+func (a Aluno) Media() float64 {
+	return 1
+}
+
+func main() {
+	fmt.Println(Aluno{}.Media())
+}

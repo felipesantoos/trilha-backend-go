@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome string
+}
+
+func (a Aluno) MudarNome(nome string) {
+	a.Nome = nome
+}
+
+func main() {
+	ana := Aluno{Nome: "Ana"}
+	ana.MudarNome("Ana Souza")
+	fmt.Println(ana.Nome)
+}
