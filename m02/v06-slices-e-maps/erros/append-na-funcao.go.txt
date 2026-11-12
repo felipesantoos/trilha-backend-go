@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func dobrar(notas []float64) {
+	for i := range notas {
+		notas[i] = notas[i] * 2
+	}
+	notas = append(notas, 100)
+}
+
+func main() {
+	notas := []float64{1, 2}
+	dobrar(notas)
+	fmt.Println(notas)
+}

@@ -1,0 +1,10 @@
+package main
+
+import "fmt"
+
+func main() {
+	alunos := []string{"Ana", "Bruno", "Carla", "Diego", "Eva"}
+	primeiros := alunos[:2]
+	primeiros[0] = "ANA"
+	fmt.Println(alunos)
+}

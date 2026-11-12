@@ -1,0 +1,11 @@
+package main
+
+import "fmt"
+
+func main() {
+	notas := []float64{7, 8, 9}
+	for _, nota := range notas {
+		nota = nota + 1
+	}
+	fmt.Println(notas)
+}

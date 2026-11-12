@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	var notas map[string]float64
+	notas["Ana"] = 8.5
+	fmt.Println(notas)
+}

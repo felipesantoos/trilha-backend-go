@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	var turnos [3]string
+	turnos[3] = "madrugada"
+	fmt.Println(turnos)
+}
