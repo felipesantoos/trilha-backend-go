@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+	dia := "Sábado"
+	switch dia {
+	case "sábado", "domingo":
+		fmt.Println("Fim de semana: sem aula")
+	case "segunda":
+		fmt.Println("Aula de Go")
+	default:
+		fmt.Println("Dia de estudar sozinho")
+	}
+}

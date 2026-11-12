@@ -1,0 +1,13 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	if idade, err := strconv.Atoi("17"); err == nil {
+		fmt.Println(idade)
+	}
+	fmt.Println(idade)
+}

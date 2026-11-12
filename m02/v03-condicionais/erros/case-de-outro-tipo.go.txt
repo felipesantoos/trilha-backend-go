@@ -1,0 +1,11 @@
+package main
+
+import "fmt"
+
+func main() {
+	dia := "sábado"
+	switch dia {
+	case 7:
+		fmt.Println("Dia 7")
+	}
+}
