@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func main() {
+	for tentativa := 1; ; tentativa++ {
+		switch tentativa {
+		case 3:
+			fmt.Println("Achou na tentativa 3")
+			break
+		}
+		if tentativa == 5 {
+			fmt.Println("Ainda rodando na tentativa 5")
+			break
+		}
+	}
+}
