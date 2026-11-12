@@ -1,0 +1,13 @@
+package main
+
+import "fmt"
+
+func zerarFaltas(faltas int) {
+	faltas = 0
+}
+
+func main() {
+	faltas := 4
+	zerarFaltas(faltas)
+	fmt.Println(faltas)
+}

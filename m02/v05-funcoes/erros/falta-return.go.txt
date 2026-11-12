@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func situacao(media float64) string {
+	if media >= 7 {
+		return "Aprovado"
+	} else if media >= 5 {
+		return "Recuperação"
+	}
+}
+
+func main() {
+	fmt.Println(situacao(8))
+}

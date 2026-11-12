@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func situacao(media float64) string {
+	if media >= 7 {
+		return "Aprovado"
+	}
+	return "Reprovado"
+}
+
+func main() {
+	n := 7
+	fmt.Println(situacao(n))
+}

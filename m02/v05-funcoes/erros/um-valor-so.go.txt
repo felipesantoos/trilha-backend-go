@@ -1,0 +1,18 @@
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+func mediaDaTurma(soma float64, quantidade int) (float64, error) {
+	if quantidade == 0 {
+		return 0, errors.New("a turma não tem alunos")
+	}
+	return soma / float64(quantidade), nil
+}
+
+func main() {
+	m := mediaDaTurma(25.5, 3)
+	fmt.Println(m)
+}
