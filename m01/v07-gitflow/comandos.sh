@@ -41,7 +41,7 @@ git branch -d release/1.0.0
 git switch -c hotfix/1.0.1 main
 echo "1.0.1" > VERSION
 echo "Corrige a contagem de alunos" >> alunos.txt
-git commit -am "fix: contagem de alunos"
+git commit -am "fix: corrige a contagem de alunos"
 git switch main
 git merge --no-ff hotfix/1.0.1 -m "Hotfix 1.0.1"
 git tag -a v1.0.1 -m "Versão 1.0.1"
