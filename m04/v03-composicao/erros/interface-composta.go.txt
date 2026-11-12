@@ -1,0 +1,46 @@
+package main
+
+import "fmt"
+
+type Pessoa struct {
+	Nome  string
+	Email string
+}
+
+func (p Pessoa) Contato() string {
+	return p.Nome + " <" + p.Email + ">"
+}
+
+type Aluno struct {
+	Pessoa
+	Matricula int
+}
+
+type Buscador interface {
+	Buscar(nome string) (Aluno, error)
+}
+
+type Gravador interface {
+	Gravar(a Aluno) error
+}
+
+type Registro interface {
+	Buscador
+	Gravador
+}
+
+type SoLeitura struct {
+	alunos []Aluno
+}
+
+func (s SoLeitura) Buscar(nome string) (Aluno, error) {
+	return Aluno{}, nil
+}
+
+func matricular(r Registro, a Aluno) error {
+	return r.Gravar(a)
+}
+
+func main() {
+	fmt.Println(matricular(SoLeitura{}, Aluno{}))
+}

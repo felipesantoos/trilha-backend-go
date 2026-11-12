@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+type Pessoa struct {
+	Nome  string
+	Email string
+}
+
+func (p Pessoa) Contato() string {
+	return p.Nome + " <" + p.Email + ">"
+}
+
+type Aluno struct {
+	Pessoa
+	Matricula int
+}
+
+func main() {
+	ana := Aluno{Nome: "Ana", Email: "ana@exemplo.com", Matricula: 1001}
+	fmt.Println(ana.Contato())
+}

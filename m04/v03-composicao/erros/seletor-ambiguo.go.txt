@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+type Pessoa struct {
+	Nome  string
+	Email string
+}
+
+func (p Pessoa) Contato() string {
+	return p.Nome + " <" + p.Email + ">"
+}
+
+type Aluno struct {
+	Pessoa
+	Matricula int
+}
+
+type Professor struct {
+	Pessoa
+	Disciplina string
+}
+
+type Monitor struct {
+	Aluno
+	Professor
+}
+
+func main() {
+	var m Monitor
+	m.Aluno.Nome = "Bia"
+	fmt.Println(m.Nome)
+}
