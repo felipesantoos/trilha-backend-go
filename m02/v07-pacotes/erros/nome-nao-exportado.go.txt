@@ -1,0 +1,13 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/ana/escola/notas"
+)
+
+func main() {
+	m := notas.Media(7, 8.5, 9)
+	fmt.Printf("Média %.2f: %s\n", m, notas.Situacao(m))
+	fmt.Println(notas.aprovado(m))
+}

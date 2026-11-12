@@ -1,0 +1,11 @@
+package main
+
+import (
+	"fmt"
+
+	"escola/notas"
+)
+
+func main() {
+	fmt.Println(notas.Media(7, 8.5, 9))
+}
