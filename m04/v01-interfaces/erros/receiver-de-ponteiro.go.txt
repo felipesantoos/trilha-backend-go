@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome     string
+	Email    string
+	Telefone string
+}
+
+type Notificador interface {
+	Enviar(a Aluno, mensagem string) error
+}
+
+type NotificadorMemoria struct {
+	Enviadas []string
+}
+
+func (m *NotificadorMemoria) Enviar(a Aluno, mensagem string) error {
+	m.Enviadas = append(m.Enviadas, a.Nome+": "+mensagem)
+	return nil
+}
+
+func avisar(n Notificador, a Aluno, mensagem string) {
+	n.Enviar(a, mensagem)
+}
+
+func main() {
+	memoria := NotificadorMemoria{}
+	avisar(memoria, Aluno{Nome: "Ana"}, "Aula às 19h.")
+	fmt.Println(memoria.Enviadas)
+}

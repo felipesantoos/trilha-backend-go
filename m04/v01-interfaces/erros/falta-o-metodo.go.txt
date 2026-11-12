@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome     string
+	Email    string
+	Telefone string
+}
+
+type Notificador interface {
+	Enviar(a Aluno, mensagem string) error
+}
+
+type NotificadorSMS struct{}
+
+func (s NotificadorSMS) Mandar(a Aluno, mensagem string) error {
+	fmt.Printf("[SMS para %s] %s\n", a.Telefone, mensagem)
+	return nil
+}
+
+func main() {
+	var n Notificador = NotificadorSMS{}
+	n.Enviar(Aluno{Nome: "Ana", Telefone: "11 99999-0000"}, "Aula às 19h.")
+}

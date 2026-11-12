@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome     string
+	Email    string
+	Telefone string
+}
+
+type Notificador interface {
+	Enviar(a Aluno, mensagem string) error
+}
+
+func avisar(n Notificador, a Aluno, mensagem string) {
+	if err := n.Enviar(a, mensagem); err != nil {
+		fmt.Println("Erro:", err)
+	}
+}
+
+func main() {
+	var n Notificador
+	fmt.Println(n == nil)
+	avisar(n, Aluno{Nome: "Ana"}, "Aula às 19h.")
+}
