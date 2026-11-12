@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+	Nota      float64
+	Ativo     bool
+}
+
+func main() {
+	ana := Aluno{Nome: "Ana", Email: "ana@exemplo.com"}
+	fmt.Println(ana)
+}

@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+type Curso struct {
+	Nome   string
+	Alunos []string
+}
+
+func main() {
+	a := Curso{Nome: "Backend em Go"}
+	b := Curso{Nome: "Backend em Go"}
+	fmt.Println(a == b)
+}

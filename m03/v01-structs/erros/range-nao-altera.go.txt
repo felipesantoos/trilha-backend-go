@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+type Aluno struct {
+	Nome      string
+	Matricula int
+	Nota      float64
+	Ativo     bool
+}
+
+func main() {
+	turma := []Aluno{{Nome: "Ana", Nota: 8.5}, {Nome: "Bruno", Nota: 6}}
+	for _, aluno := range turma {
+		aluno.Nota = 10
+	}
+	fmt.Println(turma)
+}
